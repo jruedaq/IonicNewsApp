@@ -25,8 +25,4 @@ export class TabTemplateComponent implements OnInit {
       }
     );
   }
-
-  openExternalPage(page) {
-    window.open(page);
-  }
 }

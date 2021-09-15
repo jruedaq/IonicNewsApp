@@ -14,16 +14,16 @@
   </ion-header>
 
   <div *ngIf="list.length > 0">
-    <ion-card *ngFor="let x of list" (click)="openExternalPage(x.url)">
+    <ion-card *ngFor="let x of list">
       <img alt="{{x.title}}"
            loading="lazy"
            src="{{x.urlToImage}}">
       <ion-card-header>
         <ion-card-subtitle>Publicado por: {{x.author ?? 'nn'}} el {{x.publishedAt}}</ion-card-subtitle>
-        <ion-card-title>{{title}}</ion-card-title>
+        <ion-card-title>{{x.title}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>{{x.description}}</ion-card-content>
-      <ion-button href="{{x.url}}">Leer en {{x.source.name}}</ion-button>
+      <ion-button target="_blank" href="{{x.url}}">Leer en {{x.source.name}}</ion-button>
     </ion-card>
   </div>
 
