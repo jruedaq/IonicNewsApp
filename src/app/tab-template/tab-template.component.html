@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{title}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="list.length > 0">
+    <ion-card *ngFor="let x of list" (click)="openExternalPage(x.url)">
+      <img alt="{{x.title}}"
+           loading="lazy"
+           src="{{x.urlToImage}}">
+      <ion-card-header>
+        <ion-card-subtitle>Publicado por: {{x.author ?? 'nn'}} el {{x.publishedAt}}</ion-card-subtitle>
+        <ion-card-title>{{title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>{{x.description}}</ion-card-content>
+      <ion-button href="{{x.url}}">Leer en {{x.source.name}}</ion-button>
+    </ion-card>
+  </div>
+
+  <ion-card *ngIf="list.length === 0">
+    <ion-skeleton-text animated></ion-skeleton-text>
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-skeleton-text animated></ion-skeleton-text>
+    </ion-card-content>
+    <ion-skeleton-text animated></ion-skeleton-text>
+  </ion-card>
+</ion-content>
