@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../tab-sports/tab-sports.module').then(m => m.TabSportsPageModule)
       },
       {
+        path: 'favorites',
+        loadChildren: () => import('../tab-favorites/tab-favorites.module').then(m => m.TabFavoritesPageModule)
+      },
+      {
         path: '',
         redirectTo: '/news/science',
         pathMatch: 'full'
