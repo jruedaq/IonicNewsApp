@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tab-favorites',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabFavoritesPage implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  getFavoritesArr() {
+    return JSON.parse(localStorage.getItem('favs') ?? '[]');
   }
 
 }

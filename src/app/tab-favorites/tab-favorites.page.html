@@ -1,9 +1,32 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>tab-favorites</ion-title>
+    <ion-title>Favoritos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Favoritos</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
+  <div *ngIf="getFavoritesArr().length > 0">
+    <app-card
+      *ngFor="let x of getFavoritesArr(); let i = index"
+      id="{{i}}"
+      title="{{x.title}}"
+      urlToImage="{{x.urlToImage}}"
+      author="{{x.author}}"
+      publishedAt="{{x.publishedAt}}"
+      description="{{x.description}}"
+      url="{{x.url}}"
+      source="{{x.source.name}}"
+      favorite="{{true}}"
+    ></app-card>
+  </div>
+
+  <ion-card *ngIf="getFavoritesArr().length === 0">
+    <h1>No hay datos</h1>
+  </ion-card>
 </ion-content>

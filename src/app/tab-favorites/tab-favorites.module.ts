@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TabFavoritesPageRoutingModule } from './tab-favorites-routing.module';
 
 import { TabFavoritesPage } from './tab-favorites.page';
+import {CardComponent} from '../card/card.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { TabFavoritesPage } from './tab-favorites.page';
     IonicModule,
     TabFavoritesPageRoutingModule
   ],
-  declarations: [TabFavoritesPage]
+  declarations: [TabFavoritesPage, CardComponent]
 })
 export class TabFavoritesPageModule {}

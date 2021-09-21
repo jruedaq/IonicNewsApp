@@ -8,6 +8,7 @@ import {TabSportsPageRoutingModule} from './tab-sports-routing.module';
 
 import {TabSportsPage} from './tab-sports.page';
 import {TabTemplateComponent} from '../tab-template/tab-template.component';
+import {CardComponent} from "../card/card.component";
 
 @NgModule({
   imports: [
@@ -17,9 +18,10 @@ import {TabTemplateComponent} from '../tab-template/tab-template.component';
     TabSportsPageRoutingModule
   ],
   exports: [
-    TabTemplateComponent
+    TabTemplateComponent,
+    CardComponent
   ],
-  declarations: [TabSportsPage, TabTemplateComponent]
+  declarations: [TabSportsPage, TabTemplateComponent, CardComponent]
 })
 export class TabSportsPageModule {
 }

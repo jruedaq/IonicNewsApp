@@ -8,6 +8,7 @@ import {TabTechnologyPageRoutingModule} from './tab-technology-routing.module';
 
 import {TabTechnologyPage} from './tab-technology.page';
 import {TabTemplateComponent} from '../tab-template/tab-template.component';
+import {CardComponent} from '../card/card.component';
 
 @NgModule({
   imports: [
@@ -17,9 +18,10 @@ import {TabTemplateComponent} from '../tab-template/tab-template.component';
     TabTechnologyPageRoutingModule
   ],
   exports: [
-    TabTemplateComponent
+    TabTemplateComponent,
+    CardComponent
   ],
-  declarations: [TabTechnologyPage, TabTemplateComponent]
+  declarations: [TabTechnologyPage, TabTemplateComponent, CardComponent]
 })
 export class TabTechnologyPageModule {
 }

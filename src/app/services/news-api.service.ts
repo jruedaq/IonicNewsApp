@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 })
 export class NewsApiService {
 
-  private url = 'https://newsapi.org/v2/top-headlines?country=co&category=';
+  private url = 'https://newsapi.org/v2/top-headlines?country=co&sortBy=publishedAt&category=';
   private key = '2f3a7fe54ef44867ab1b035861120fa5';
 
   constructor(private http: HttpClient) {

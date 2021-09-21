@@ -1,0 +1,13 @@
+<ion-card>
+  <img alt="{{title}}"
+       loading="lazy"
+       src="{{urlToImage}}">
+  <ion-card-header>
+    <ion-card-subtitle>Publicado por: {{author ?? 'nn'}} el {{publishedAt}}</ion-card-subtitle>
+    <ion-card-title>{{title}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>{{description}}</ion-card-content>
+  <ion-icon (click)="addFav(title, urlToImage, author, publishedAt, description, url, source)" style="width: 100%; font-size: 30px"
+            [name]="favorite ? 'heart' : 'heart-outline'"></ion-icon>
+  <ion-button style="width: 100%" target="_blank" href="{{url}}">Leer en {{source}}</ion-button>
+</ion-card>
